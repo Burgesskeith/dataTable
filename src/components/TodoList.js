@@ -1,6 +1,7 @@
-import React, { Fragment, useRef } from "react";
+import React, { Fragment } from "react";
 import DataTable from "./DataTableBase";
 // import axios from "axios";
+import TodoDetails from "./TodoDetails";
 
 function TodoList() {
   // const [data, setData] = useState([]);
@@ -1257,8 +1258,12 @@ function TodoList() {
         minHeight: "72px", // override the row height
         backgroundColor: "#f2f2f2",
         color: "#333",
+        "&:hover": {
+          backgroundColor: "#green",
+        },
       },
     },
+
     headCells: {
       style: {
         height: "50px",
@@ -1320,12 +1325,12 @@ function TodoList() {
           columns={columns}
           data={data}
           customStyles={customStyles}
-          expandableRows
-          expandableRowsComponent={ExpandedComponent}
+          // expandableRows
+          // expandableRowsComponent={ExpandedComponent}
           // selectableRows
           // striped
 
-          // highlightOnHover
+          highlightOnHover
           // pointerOnHover
           onRowClicked={(row, event) => handleClick(row)}
         />
