@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import DataTable from "./DataTableBase";
 // import axios from "axios";
-import TodoDetails from "./TodoDetails";
 
 function TodoList() {
   // const [data, setData] = useState([]);
