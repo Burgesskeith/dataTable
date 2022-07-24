@@ -15,7 +15,7 @@ function TodoDetails({ row, toggleDash }) {
           <strong>Title:</strong> {row.title}
         </div>
         <div>
-          <strong>Status:</strong> {row.completed}
+          <strong>Completed:</strong> {row.completed}
         </div>
       </div>
       <button
