@@ -1316,16 +1316,16 @@ function TodoList() {
   return (
     <Fragment>
       <div>
-        <h1 className="text-center py-4 text-2xl">Todo List</h1>
+        <h1 className="text-center py-4 text-2xl">Testing Tables</h1>
       </div>
       <div className="container border shadow mx-auto">
         <DataTable
-          title="Todo List"
+          // title="Todo List"
           columns={columns}
           data={data}
           customStyles={customStyles}
-          // expandableRows
-          // expandableRowsComponent={ExpandedComponent}
+          expandableRows
+          expandableRowsComponent={ExpandedComponent}
           // selectableRows
           // striped
 
