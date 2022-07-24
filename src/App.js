@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import TodoList from "./components/TodoList";
-import { Routes, Route } from "react-router-dom";
 import TodoDetails from "./components/TodoDetails";
 
 function App() {
+  const [dashboard, setDashboard] = useState(true);
+  const [row, setRow] = useState({});
+
+  const toggleDash = () => {
+    setDashboard(!dashboard);
+  };
+
+  const changeRow = (row) => {
+    setRow(row);
+  };
+
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<TodoList />} />
-        <Route path="/details" element={<TodoDetails />} />
-      </Routes>
+      {dashboard ? (
+        <TodoList
+          isDash={dashboard}
+          toggleDash={toggleDash}
+          changeRow={changeRow}
+        />
+      ) : (
+        <TodoDetails isDash={dashboard} toggleDash={toggleDash} row={row} />
+      )}
     </div>
   );
 }
