@@ -5,7 +5,7 @@ import DropdownSection from "./DropdownSection";
 function TodoList({ dashboard, toggleDash, changeRow }) {
   const columns = [
     {
-      name: "ID",
+      name: "Ticket ID",
       selector: (row) => row.id,
       sortable: true,
     },
@@ -1251,12 +1251,14 @@ function TodoList({ dashboard, toggleDash, changeRow }) {
   const customStyles = {
     rows: {
       style: {
+        marginTop: "32px",
         height: "40px",
         minHeight: "72px", // override the row height
         backgroundColor: "#f2f2f2",
-        color: "#333",
+        color: "#fff",
+        borderRadius: "4px",
         "&:hover": {
-          backgroundColor: "#green",
+          backgroundColor: "green",
         },
       },
     },
@@ -1269,14 +1271,17 @@ function TodoList({ dashboard, toggleDash, changeRow }) {
         backgroundColor: "rgb(51 65 85)",
         color: "white",
         fontSize: "16px",
-        borderRight: "1px solid #ccc",
+
+        // borderRight: "1px solid #ccc",
       },
     },
     cells: {
       style: {
         paddingLeft: "12px", // override the cell padding for data cells
         paddingRight: "8px",
-        borderRight: "1px solid #ccc",
+        // borderRight: "1px solid #ccc",
+        backgroundColor: "rgb(51 65 85)",
+        color: "white",
       },
     },
   };
@@ -1289,7 +1294,7 @@ function TodoList({ dashboard, toggleDash, changeRow }) {
   };
 
   const ExpandedComponent = ({ data }) => (
-      <DropdownSection data={{data}} />
+    <DropdownSection data={{ data }} click={handleClick} />
   );
 
   return (
@@ -1297,7 +1302,7 @@ function TodoList({ dashboard, toggleDash, changeRow }) {
       <div>
         <h1 className="text-center py-4 text-2xl">Tickets</h1>
       </div>
-      <div className="container border shadow mx-auto">
+      <div className="container mx-auto">
         <DataTable
           // title="Tickets - Westpac"
           columns={columns}
@@ -1309,7 +1314,7 @@ function TodoList({ dashboard, toggleDash, changeRow }) {
           // striped
 
           highlightOnHover
-          // pointerOnHover
+          pointerOnHover
           onRowClicked={(row, event) => handleClick(row)}
         />
       </div>

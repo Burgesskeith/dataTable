@@ -1,5 +1,6 @@
 {
   "name": "datatable",
+  "homepage": "https://keithburgess.com.au/datatable/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
